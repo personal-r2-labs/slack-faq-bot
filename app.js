@@ -36,6 +36,10 @@ app.message('hello', async ({ message, say }) => {
   })
 })
 
+app.message('goodbye', async ({ message, say }) => {
+  await say(`See ya later, <@${message.user}> :wave:`)
+})
+
 app.action('button_click', async ({ body, ack, say }) => {
   await ack()
   await say(`<@${body.user.id}> clicked the button`)
